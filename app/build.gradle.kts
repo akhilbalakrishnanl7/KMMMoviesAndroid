@@ -66,4 +66,13 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("eu.bambooapps:compose-material3-pullrefresh:1.0.0")
+    implementation ("androidx.navigation:navigation-compose:2.7.5")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
+    implementation("io.insert-koin:koin-androidx-compose:3.4.1")
+
+    implementation("com.litmus7.kmmmovies:movies:0.0.1")
 }
