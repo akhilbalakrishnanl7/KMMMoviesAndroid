@@ -37,7 +37,7 @@ fun MovieApp() {
     val isSystemDark = isSystemInDarkTheme()
     val statusBarColor = if (isSystemDark) {
         /**Status bar color */
-        MaterialTheme.colorScheme.primaryContainer
+        MaterialTheme.colorScheme.onPrimary
     } else {
         Color.Transparent
     }

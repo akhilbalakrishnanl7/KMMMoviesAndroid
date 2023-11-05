@@ -40,7 +40,8 @@ fun HomeScreen(
     )
 
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
             /**Home screen background*/
             .background(color = MaterialTheme.colorScheme.background)
             .pullRefresh(state = pullRefreshState)
@@ -51,10 +52,7 @@ fun HomeScreen(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            itemsIndexed(
-                uiState.movies,
-                key = { _, movie -> movie.id }
-            ) { index, movie ->
+            itemsIndexed(uiState.movies, key = { _, movie -> movie.id }) { index, movie ->
                 MovieListItem(movie = movie, onMovieClick = { navigateToDetail(movie) })
 
                 if (index >= uiState.movies.size - 1 && !uiState.loading && !uiState.loadFinished) {
@@ -65,7 +63,8 @@ fun HomeScreen(
             if (uiState.loading && uiState.movies.isNotEmpty()) {
                 item(span = { GridItemSpan(2) }) {
                     Row(
-                        modifier = modifier.fillMaxWidth()
+                        modifier = modifier
+                            .fillMaxWidth()
                             .padding(16.dp),
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
@@ -79,7 +78,7 @@ fun HomeScreen(
         PullRefreshIndicator(
             refreshing = uiState.refreshing,
             state = pullRefreshState,
-            modifier = modifier.align(Alignment.Center)
+            modifier = modifier.align(Alignment.TopCenter)
         )
     }
 }

@@ -1,6 +1,5 @@
 package com.litmus7.movies.common
 
-import android.widget.ImageButton
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -32,7 +31,7 @@ fun MovieAppBar(
             .height(56.dp),
         shadowElevation = 4.dp,
         /**Appbar surface color*/
-        color = MaterialTheme.colorScheme.primary
+        color = MaterialTheme.colorScheme.onPrimary
     ) {
         Row(
             modifier = modifier.padding(start = 8.dp),
