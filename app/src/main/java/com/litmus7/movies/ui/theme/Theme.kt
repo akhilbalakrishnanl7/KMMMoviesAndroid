@@ -15,31 +15,69 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-/**
- * On devices running Android 12+ the dynamic colors will be applied according to the wallpaper
- * color. Devices running below Android 12 will chose the application theme.
- */
 private val DarkColorScheme = darkColorScheme(
-    primary = Dark4,
-    onPrimary= Dark3,
-    surface = Dark2,
-    secondary = Red,
-    background = Dark1
+    primary = DarkBlue10,
+    onPrimary = White90,
+//    primaryContainer = Green90,
+//    onPrimaryContainer = Green10,
+//    inversePrimary = Green80,
+    secondary = MediumDarkBlue20,
+    onSecondary = White90,
+    secondaryContainer = Red40,
+//    onSecondaryContainer = DarkGreen10,
+//    tertiary = Violet40,
+//    onTertiary = Color.White,
+//    tertiaryContainer = Violet90,
+//    onTertiaryContainer = Violet10,
+    error = Red40,
+    onError = White90,
+    errorContainer = Red90,
+    onErrorContainer = Red10,
+    background = DarkBlue10,
+//    onBackground = Grey10,
+//    surface = ,
+//    onSurface = White90,
+//    inverseSurface = Grey20,
+//    inverseOnSurface = Grey95,
+//    surfaceVariant = GreenGrey90,
+//    onSurfaceVariant = GreenGrey30,
+//    outline = GreenGrey50
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Dark4,
-    onPrimary= Dark3,
-    surface = Dark2,
-    secondary = Red,
-    background = Dark1
+    primary = LightBlue90,
+    onPrimary = White20,
+//    primaryContainer = Green90,
+//    onPrimaryContainer = Green10,
+//    inversePrimary = Green80,
+    secondary = LightBlue80,
+    onSecondary = White20,
+    secondaryContainer = Red40,
+//    onSecondaryContainer = DarkGreen10,
+//    tertiary = Violet40,
+//    onTertiary = Color.White,
+//    tertiaryContainer = Violet90,
+//    onTertiaryContainer = Violet10,
+    error = Red40,
+    onError = White90,
+    errorContainer = Red90,
+    onErrorContainer = Red10,
+    background = LightBlue90,
+//    onBackground = Grey10,
+//    surface = GreenGrey90,
+//    onSurface = GreenGrey30,
+//    inverseSurface = Grey20,
+//    inverseOnSurface = Grey95,
+//    surfaceVariant = GreenGrey90,
+//    onSurfaceVariant = GreenGrey30,
+//    outline = GreenGrey50
 )
 
 @Composable
 fun MoviesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -35,9 +36,11 @@ fun MovieListItem(
     onMovieClick: (Movie) -> Unit
 ) {
     Card(
-        modifier = modifier.height(220.dp)
+        modifier = modifier
+            .height(220.dp)
             .clickable { onMovieClick(movie) },
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(8.dp),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.secondary)
     ) {
         Column {
             Box(
@@ -48,7 +51,8 @@ fun MovieListItem(
                     model = movie.imageUrl,
                     contentDescription = movie.title,
                     contentScale = ContentScale.Crop,
-                    modifier = modifier.fillMaxSize()
+                    modifier = modifier
+                        .fillMaxSize()
                         .clip(RoundedCornerShape(bottomStart = 2.dp, bottomEnd = 2.dp))
                 )
                 Surface(
@@ -59,7 +63,9 @@ fun MovieListItem(
                     Image(
                         painter = painterResource(R.drawable.play_button),
                         contentDescription = "play",
-                        modifier = modifier.padding(12.dp).align(Alignment.Center)
+                        modifier = modifier
+                            .padding(12.dp)
+                            .align(Alignment.Center)
                     )
                 }
             }
@@ -71,12 +77,14 @@ fun MovieListItem(
                     /**Movie title style*/
                     style = MaterialTheme.typography.titleMedium,
                     maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
+                    overflow = TextOverflow.Ellipsis,
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
                 Spacer(modifier = modifier.height(4.dp))
                 Text(
                     text = movie.releaseDate,
-                    style = MaterialTheme.typography.bodySmall
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
             }
         }

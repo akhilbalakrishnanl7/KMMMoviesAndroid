@@ -11,7 +11,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -35,12 +34,16 @@ fun MovieApp() {
     var scaffoldState by remember { mutableStateOf(false) }
 
     val isSystemDark = isSystemInDarkTheme()
-    val statusBarColor = if (isSystemDark) {
-        /**Status bar color */
-        MaterialTheme.colorScheme.onPrimary
-    } else {
-        Color.Transparent
-    }
+    val statusBarColor = MaterialTheme.colorScheme.primary
+
+    /**
+     * val statusBarColor =if (isSystemDark) {
+     *         /**Status bar color */
+     *         MaterialTheme.colorScheme.primary
+     *     } else {
+     *         Color.Transparent
+     *     }
+     */
     SideEffect { systemUiController.setStatusBarColor(statusBarColor, darkIcons = !isSystemDark) }
 
     val backStackEntry by navController.currentBackStackEntryAsState()

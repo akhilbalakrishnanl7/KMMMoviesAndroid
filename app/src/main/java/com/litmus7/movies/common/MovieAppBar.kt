@@ -31,7 +31,7 @@ fun MovieAppBar(
             .height(56.dp),
         shadowElevation = 4.dp,
         /**Appbar surface color*/
-        color = MaterialTheme.colorScheme.onPrimary
+        color = MaterialTheme.colorScheme.primary
     ) {
         Row(
             modifier = modifier.padding(start = 8.dp),
@@ -42,7 +42,7 @@ fun MovieAppBar(
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
                         contentDescription = "back",
-                        tint = MaterialTheme.colorScheme.onBackground
+                        tint = MaterialTheme.colorScheme.onPrimary
                     )
                 }
                 Spacer(modifier = modifier.width(24.dp))
@@ -53,7 +53,7 @@ fun MovieAppBar(
                 style = MaterialTheme.typography.titleMedium,
                 modifier = modifier.padding(12.dp),
                 /**Color of appbar title*/
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onPrimary
             )
         }
     }

@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.litmus7.kmmmovies.domain.model.Movie
 import eu.bambooapps.material3.pullrefresh.PullRefreshIndicator
+import eu.bambooapps.material3.pullrefresh.PullRefreshIndicatorDefaults
 import eu.bambooapps.material3.pullrefresh.pullRefresh
 import eu.bambooapps.material3.pullrefresh.rememberPullRefreshState
 
@@ -78,7 +79,8 @@ fun HomeScreen(
         PullRefreshIndicator(
             refreshing = uiState.refreshing,
             state = pullRefreshState,
-            modifier = modifier.align(Alignment.TopCenter)
+            modifier = modifier.align(Alignment.TopCenter),
+            colors = PullRefreshIndicatorDefaults.colors(MaterialTheme.colorScheme.background)
         )
     }
 }

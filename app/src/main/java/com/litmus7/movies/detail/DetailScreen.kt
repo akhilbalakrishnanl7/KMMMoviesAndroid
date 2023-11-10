@@ -59,14 +59,15 @@ fun DetailScreen(
                         text = movie.title,
                         /**Detail screen movie title*/
                         style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSecondary
                     )
                     Spacer(modifier = modifier.height(8.dp))
                     Button(
                         onClick = {},
                         modifier = modifier.fillMaxWidth()
                             .height(46.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
+                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
                         elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp)
                     ) {
                         Icon(
@@ -85,14 +86,16 @@ fun DetailScreen(
                         text = "Released on: ${movie.releaseDate}",
                         /**movie release date font*/
                         style = MaterialTheme.typography.bodyLarge,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSecondary
                     )
                     Spacer(modifier = modifier.height(8.dp))
                     Text(
                         text = movie.description,
                         /**Detail screen movie description font*/
                         style = MaterialTheme.typography.bodyMedium,
-                        fontWeight = FontWeight.Normal
+                        fontWeight = FontWeight.Normal,
+                        color = MaterialTheme.colorScheme.onSecondary
                     )
                 }
             }
